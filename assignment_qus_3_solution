@@ -1,0 +1,14 @@
+from itertools import permutations
+lst = eval(input())
+l = []
+for k in permutations(lst):
+    c = 0
+    for i in range(len(k)):
+        last = k[i - 1][-1]
+        first = k[i][0]
+        if first == last:
+            c += 1
+    if c == len(k):
+        l.extend(k)
+        break
+print(l)
